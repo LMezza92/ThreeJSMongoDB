@@ -1,0 +1,6 @@
+<div class="modal modal-exit" [ngClass]="{'modal-exit': flagMenu, 'modal-enter': !flagMenu}">
+    <h1 style="color: aliceblue;">Angular App Served by Heroku</h1>
+</div>
+	<div (click)="flagMenu = !flagMenu" class="container" >
+	<div class="box" [ngClass]="{'morph-m': flagMenu, 'morph-x': !flagMenu}"></div>
+</div>
