@@ -1,0 +1,23 @@
+.frame {
+    height: 10vh;
+    width: 80vw;
+    border: 1px solid white;
+    padding:40px;
+    animation-name: b;
+    animation-duration: 1s;
+    display: flex;
+    margin-bottom: 50px;
+    & h4, p {
+        color: white;
+    }
+
+}
+
+@keyframes b {
+    0% {
+        opacity: 0;;
+    }
+    100% {
+        opacity: 1;
+    }
+}
