@@ -50,7 +50,7 @@ nav {
     width: 35px;
     height: 35px;	
     background-color: $base-color;
-//    background-image: url('../../assets/leaf.png');
+    background-image: url('../../assets/leaf.png');
     background-size: 100%;
     clip-path: polygon(20% 0%, 0 0, 0 100%, 28% 100%, 28% 43%, 50% 70%, 71% 44%, 71% 100%, 100% 100%, 100% 0, 80% 0%, 50% 30%);
     transition: width 1.2s, height 1.2s;

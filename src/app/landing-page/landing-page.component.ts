@@ -79,6 +79,6 @@ export class LandingPageComponent implements OnInit, OnDestroy {
           markers: false,
         }
       })
-      .fromTo(".container-landing", {backgroundColor: "white" },{backgroundColor: "#FDF6E3" })
+      .fromTo(".container-landing", {backgroundColor: "#FDF6E3" },{backgroundColor: "#FDF6E3" })
     }
 }
