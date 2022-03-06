@@ -1,0 +1,32 @@
+<div class="contact-container">
+    <button routerLink="/" >Back</button>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <label for="first-name">First Name: </label>
+        <input placeholder="Name" id="first-name" type="text" formControlName="firstName">
+      
+        <label for="last-name">Last Name: </label>
+        <input placeholder="Surname" id="last-name" type="text" formControlName="lastName">
+
+        <label for="last-name">Company: </label>
+        <input placeholder="Company" id="company" type="text" formControlName="company">
+
+        <label for="last-name">Email: </label>
+        <input placeholder="Email" id="email" type="text" formControlName="email">
+        
+        <label for="last-name">Message: </label>
+        <textarea placeholder="Message" 
+                id="message" 
+                type="text" 
+                formControlName="message" 
+                cols="30" 
+                rows="5"></textarea>
+        <br>
+        <label for="consent">Privacy Policy <input id="consent" name="consent" type="checkbox" formControlName="check"></label>
+        
+        <p>Complete the form to enable button.</p>
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    </form>
+    <p>Form Status: {{ profileForm.status }}</p>
+    <p>Form Value: {{ profileForm.value | json}}</p>
+</div>
+<app-footer></app-footer>

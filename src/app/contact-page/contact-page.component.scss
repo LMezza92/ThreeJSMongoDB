@@ -1,0 +1,36 @@
+@import "../../styles.scss";
+
+.contact-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $base-color;
+}
+
+form {
+    min-height: 80vh;
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    & input, textarea {
+        caret-color: pink;
+        font-size: 16px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        resize: none;
+        background-color: whitesmoke;
+    }
+    & input:focus, textarea:focus {
+        outline: none;
+        background-color:white;
+    } 
+}

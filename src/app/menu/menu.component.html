@@ -1,7 +1,17 @@
 <div class="wrapper">
-	<div [@openClose]="!isOpen ? 'open' : 'closed'" class="header">
-		<div (click)="isOpen = !isOpen" class="container" >
-			<div class="box" [ngClass]="{'morph-m': isOpen, 'morph-x': !isOpen}"></div>
-		</div>
+	<div (click)="toggle()" class="container" [ngClass]="{'container-small': menuService.isOpen}">
+		<div class="box" [ngClass]="{'morph-m': !menuService.isOpen, 'morph-x': menuService.isOpen}"></div>
 	</div>
+		
+	<!-- <div [@openClose]="menuService.isOpen ? 'open' : 'closed'" class="header">
+		<div (click)="toggle()" class="container" [ngClass]="{'container-small': menuService.isOpen}">
+			<div class="box" [ngClass]="{'morph-m': !menuService.isOpen, 'morph-x': menuService.isOpen}"></div>
+		</div>
+		<nav *ngIf="menuService.isOpen">
+			<ul>
+				<li ><a routerLink="/" routerLinkActive="active">Home</a></li>
+				<li ><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+			</ul>
+		</nav>
+	</div> -->
 </div>

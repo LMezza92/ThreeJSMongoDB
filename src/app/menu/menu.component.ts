@@ -1,26 +1,27 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-
+import { MenuService } from '../services/menu.service';
 @Component({
   selector: 'app-menu',
   animations: [
     trigger('openClose', [
       // ...
       state('open', style({
-        height: '200px',
+        height: '50px',
+        width:'100%',
         opacity: 1,
-        backgroundColor: '#1b1f28'
+        backgroundColor: 'white'
       })),
       state('closed', style({
-        height: '3px',
+        height: '50px',
         opacity: 1,
         backgroundColor: 'white'
       })),
       transition('open => closed', [
-        animate('1s')
+        animate('.3s')
       ]),
       transition('closed => open', [
-        animate('0.7s')
+        animate('0.3s')
       ]),
     ]),
   ],
@@ -29,14 +30,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
 
+  constructor(public menuService: MenuService) { }
+   
   ngOnInit(): void {
   }
-
-  isOpen = true;
-
-  toggle() {
-    this.isOpen = !this.isOpen;
+   toggle() {
+    this.menuService.isOpen = !this.menuService.isOpen;
   }
 }

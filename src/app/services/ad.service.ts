@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AdItem } from '../ad-item';
+import { AdItem } from '../ad-banner/ad-item';
 import { FrameComponent } from '../frame/frame.component';
 
 @Injectable()

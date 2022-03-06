@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { FrameComponent } from './frame/frame.component';
-import { AdDirective } from './ad.directive';
 import { AdService } from './services/ad.service';
 import { FooterComponent } from './footer/footer.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AdDirective } from './ad-banner/ad.directive';
+import { HorizonComponent } from './horizon/horizon.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { FooterComponent } from './footer/footer.component';
     LandingPageComponent,
     FrameComponent,
     AdDirective,
-    FooterComponent
+    FooterComponent,
+    ContactPageComponent,
+    HorizonComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [AdService],
   bootstrap: [AppComponent]

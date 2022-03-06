@@ -1,11 +1,13 @@
 import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { AdItem } from '../ad-item';
+import { AdItem } from '../ad-banner/ad-item';
 import { AdComponent } from '../interfaces/ad.component';
-import { AdDirective } from '../ad.directive';
+
 import { AdService } from '../services/ad.service';
 import { gsap } from 'gsap';
 import Draggable from "gsap/Draggable";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { AdDirective } from '../ad-banner/ad.directive';
+import { MenuService } from '../services/menu.service';
 
 
 @Component({
@@ -23,16 +25,19 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   @ViewChild(AdDirective, {static: true}) adHost!: AdDirective;
   interval: any;
 
-  constructor(private adService: AdService){}
+  constructor(private adService: AdService, public menuService: MenuService){}
 
   ngOnInit(): void {
     this.ads = this.adService.getAds();
     this.loadComponent();
     this.getAds();
-
+    console.log("new")
     gsap.registerPlugin(ScrollTrigger, Draggable);
     this.initScrollTriggers();
-  }
+
+
+    
+    }
 
   ngOnDestroy() {
     clearInterval(this.interval);
@@ -56,7 +61,9 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   }
 
 
-
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
+}
 
 
 
@@ -72,6 +79,6 @@ export class LandingPageComponent implements OnInit, OnDestroy {
           markers: false,
         }
       })
-      .fromTo(".container-landing", {backgroundColor: "#1b1f28" },{backgroundColor: "#d9d9d9" })
+      .fromTo(".container-landing", {backgroundColor: "white" },{backgroundColor: "#FDF6E3" })
     }
 }
