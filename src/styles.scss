@@ -3,6 +3,7 @@ $base-color: #FDF6E3;
 body {
   background-color: $base-color;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 } 
 * {
   margin: 0;

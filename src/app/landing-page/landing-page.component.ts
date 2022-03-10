@@ -62,7 +62,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
 
   scroll(el: HTMLElement) {
-    el.scrollIntoView({behavior: 'smooth'});
+    el.scrollIntoView({ behavior: 'smooth'});
 }
 
 
