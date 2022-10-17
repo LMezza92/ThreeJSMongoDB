@@ -27,14 +27,17 @@ app-menu {
 }
 
 .bonnet {
-    height: 100%;
+    position: relative;
+    top: 1px;
+    height: 90%;
     grid-row: 2/4;
     grid-column: 1/9;
-    overflow-x: hidden;
+    overflow: hidden;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .component-top {
     grid-row: 1/3;

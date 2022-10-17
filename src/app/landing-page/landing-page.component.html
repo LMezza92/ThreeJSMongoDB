@@ -4,7 +4,7 @@
         <div class="component-top two" [ngClass]="{'component-open': menuService.isOpen}">
             <ul class="menu-item" [ngClass]="{'menu-open': menuService.isOpen}">
                 <li (click)="scroll(bravo)">Projects</li>
-                <li>Works</li>
+				<li ><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
                 <li (click)="scroll(delta)">Hugo</li>
             </ul>
         </div>
@@ -12,7 +12,7 @@
         <div class="component-top four" [ngClass]="{'component-open': menuService.isOpen}" >
             <ul class="menu-item" [ngClass]="{'menu-open': menuService.isOpen}">
                 <li ><a routerLink="/" routerLinkActive="active">Home</a></li>
-				<li ><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+				<li ><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
             </ul>
         </div>
         <div class="component-top five"></div>
@@ -47,7 +47,7 @@
 </div>
 
 <div #delta class="delta">
-   
+   <app-items-draggable></app-items-draggable>
 </div>
 
 <app-footer></app-footer>

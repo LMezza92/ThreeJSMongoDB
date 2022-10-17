@@ -26,7 +26,12 @@
         <p>Complete the form to enable button.</p>
         <button type="submit" [disabled]="!profileForm.valid">Submit</button>
     </form>
-    <p>Form Status: {{ profileForm.status }}</p>
-    <p>Form Value: {{ profileForm.value | json}}</p>
+    <div *ngIf="emailSent" class="email-confirmation">
+        <h3>{{outcome}}</h3>
+        <h4>We will get in touch as soon as possible 😀</h4>
+        <button (click)="ok()">Ok</button>
+    </div>
+    <!-- <p>Form Status: {{ profileForm.status }}</p>
+    <p>Form Value: {{ profileForm.value | json}}</p> -->
 </div>
 <app-footer></app-footer>

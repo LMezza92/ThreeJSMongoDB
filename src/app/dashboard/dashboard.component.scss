@@ -1,0 +1,44 @@
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding: 30px;
+}
+.dashboard-header{
+    width: 100%;
+}
+.no-results {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-add {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: aliceblue;
+    & form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 70%;
+        background-color: blueviolet;
+        & div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+.file {
+    border: 1px solid crimson;
+}

@@ -31,12 +31,8 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     this.ads = this.adService.getAds();
     this.loadComponent();
     this.getAds();
-    console.log("new")
     gsap.registerPlugin(ScrollTrigger, Draggable);
     this.initScrollTriggers();
-
-
-    
     }
 
   ngOnDestroy() {

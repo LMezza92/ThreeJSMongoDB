@@ -1,0 +1,39 @@
+.item-container {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: aliceblue;
+}
+.square {
+    width: 170px;
+    height: 170px;
+
+}
+.confirm-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 30%;
+    background-color: beige;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+input {
+    width: 170px;
+}
+button {
+    width: 170px;
+}
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+}

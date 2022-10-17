@@ -1,0 +1,29 @@
+<div class="item-container">    
+    <button [disabled]="onDelete" *ngIf="editMode" (click)="onDelete=!onDelete">X</button>
+    <div class="square">
+        <img id="img" src="http://localhost:5000/api/images/{{img}}" width="100%" height="100%">
+    </div>
+    <div>
+        <input [disabled]="!editMode" [(ngModel)]="name" id="first-name" type="text" placeholder="Name">
+        <input [disabled]="!editMode" [(ngModel)]="surname" id="last-name" type="text" placeholder="Surname">
+        <input disabled [(ngModel)]="_id" id="id" type="text" placeholder="ID">
+    </div>
+    <button *ngIf="!editMode" (click)="edit()">Edit</button>
+    <button *ngIf="editMode" (click)="cancel()">Cancel</button>
+    <button *ngIf="editMode" (click)="update()">Submit</button>
+
+    <div (click)="onDelete=!onDelete" *ngIf="onDelete" class="confirm-modal">
+
+        <h3>This item will be deleted permanently</h3>
+        <ul>
+            <li>name: {{name}}</li>
+            <li>surname: {{surname}}</li>
+            <li>id: {{_id}}</li>
+        </ul>
+        <div>
+            <button (click)="cancel()">Cancel</button>
+            <button (click)="delete()">OK</button>  
+        </div>
+ 
+    </div>
+</div>

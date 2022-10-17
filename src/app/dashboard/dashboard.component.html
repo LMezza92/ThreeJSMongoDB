@@ -1,0 +1,33 @@
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <button routerLink="/" >Back</button>
+        <button (click)="modal=!modal">Add</button>
+    </div>
+  
+    <!-- <img src="http://localhost:5000/api/images/leaf.png" alt="" width="50px" height="50px"> -->
+
+    <div *ngFor="let item of items; let i = index" >
+        <button (click)="c(item)">D</button>
+        <app-item [name]="item.name" [surname]="item.surname" [_id]="item._id" [img]="item.img" (trigger)="triggerInit()"></app-item>
+    </div>
+    <div *ngIf="items.length==0" class="no-results">
+        <h4>No Results</h4>
+    </div>
+</div>
+<div *ngIf="modal" class="modal-add">
+    <button (click)="modal=!modal">X</button>
+    <form (keyup.enter)="onEnter()" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div>
+            <input id="first-name" type="text" placeholder="Name" formControlName="n" required="true">
+            <input id="last-name" type="text" placeholder="Surname" formControlName="s" required="true">
+        </div>
+        <!-- <button [disabled]="profileForm.status != 'VALID'" type="submit">Submit</button> -->
+    </form>
+    <div class="file-drop">
+        <input class="file" type="file" (change)="getFile($event)">
+        <!-- <button *ngIf="file" (click)="upload()">Upload</button> -->
+    </div>
+    <button [disabled]="profileForm.status != 'VALID' || !imgLoaded" (click)="uploadAndSubmit()">UPLOADANSUBMIT</button>
+</div>
+
+<app-footer></app-footer>
